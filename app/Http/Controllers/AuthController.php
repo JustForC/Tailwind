@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -100,7 +101,7 @@ class AuthController extends Controller
 
     public function test()
     {
-        $posts = User::with("posts")->find(1);
+        $posts = Post::where("user_id", '=', 2)->with("user")->get();
         dd($posts);
     }
 }

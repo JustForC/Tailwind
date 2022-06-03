@@ -8,10 +8,12 @@
             <livewire:follow-button :username="$user->id">
             </livewire:follow-button>
         </div>
-        <div class="flex flex-col w-full h-24 px-4">
+        <div class="flex flex-col border-b border-gray-600 w-full h-24 px-4">
             <h1 class="font-bold text-xl">{{$user->name}}</h1>
             <h1 class="text-base text-gray-300 opacity-25 mt-1">{{"@".$user->username}}</h1>
         </div>
+        <livewire:user-post :username="$user->id">
+        </livewire:user-post>
     </div>
 </div>
 {{-- End Content --}}
